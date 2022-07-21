@@ -1,0 +1,941 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,600&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+    --montserrat-font: 'Montserrat', sans-serif;
+    --poppins-font: 'Poppins', sans-serif;
+
+    --yellow-orange-color: #FEDA15;
+    --old-lace-color: #fdf5ea;
+    --red-color: #ff6347;
+    --gray-color: #f2f2f2;
+    --dark-color: #333;
+    --black-color: #000;
+    --light-color: #fff;
+    --transition: all 0.3s ease-in-out;
+    
+}
+
+html{
+    font-size: 10px;
+   
+}
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    font: size 1.6rem; 
+    line-height: 1.5;
+    background-color: #000;
+    color: var(--dark-color);
+    font-family: var(--poppins-font);
+}
+
+h1, h2, h3, h4{
+    font-family: var(--montserrat-font);
+    margin-top: 0;
+    line-height: 1.3;
+   
+}
+p{
+    color: #fff;
+}
+a{
+    color: var(--dark-color);
+}
+ul{
+    list-style: none;
+}
+.container{
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: none;
+    cursor: pointer;
+}
+.flex{
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+}
+img{
+    width: 70%;
+    display:block;
+}
+
+/*header*/
+.navbar{
+    box-shadow: 0 4px 4px -2px rgb(0, 0, 0, 0.1);
+    position: relative;
+    font-size:small;
+    height: 50px;
+}
+.navbar .container{
+    width: 100%;
+    justify-content:space-between;
+}
+.navbar-brand img{
+    text-align:left;
+    width: 100px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    
+}
+.navbar-brand p{
+    font-weight: 800;
+    padding-right: 20px;
+    font-size: 1.5rem;
+    background-color: var(--yellow-orange-color);
+    background-image: linear-gradient(62deg, #FEDA15 0%, #f5961d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.navbar-toggler{
+    z-index: 1000;
+    transition: var(--transition);
+}
+.navbar-toggler img{
+    width: 24px;
+}
+.navbar-toggler:hover{
+    opacity: 0.8;
+}
+.navbar-collapse{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width:100%;
+    height: 100%;
+    z-index: 999;
+    background-color: var(--yellow-orange-color);
+    border-left: 4px solid var(--black-color);
+    /* shadow navbar-collapse div class*/
+    transform: translateX(100%);
+    transition: var(--transition);
+}
+/* shadow navbar-collapse div class*/
+.show-navbar-collapse{
+    transform: translateX(0);
+}
+.navbar-nav{
+    padding: 1.6rem;
+    }
+.nav-item{
+    margin: 2rem 0;
+}
+.nav-link{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 1000;
+    color: var(--black-color);
+    display:inline-block;
+    transition: var(--transition);
+    position: relative;
+}
+.nav-link::before{
+    content: "-";
+    position: absolute;
+    left: -20px;
+    opacity: 0;
+    transition: var(--transition);
+}
+.nav-link:hover{
+    transform:translateX(20px);
+    transition: var(--transition);
+}
+.nav-link:hover::before{
+    opacity: 1;
+
+}
+/* show fixed nav bar after scrolling*/
+.fixed-navbar .navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--black-color);
+    z-index: 999;
+}
+.fixed-navbar .banner{
+    margin: top 60px;
+}
+.banner{
+    padding: 3rem 0;
+    text-align: center;
+    
+}
+.banner .container{
+    min-height: 70vh;
+}
+
+.text{
+    font-weight: 300;
+    opacity: .9;
+    text-align: center;
+    padding: 1rem 0;
+}
+.banner-image h4{
+  color: var(--light-color);
+  text-align:start;
+  font-size: small;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-justify:newspaper;
+
+}
+.banner-image span{
+  color: var(--yellow-orange-color);
+ font-size: x-large;
+
+}
+.banner-text{
+    max-width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.banner-text h2{
+    color: var(--yellow-orange-color);
+    text-align:justify;
+    text-transform: uppercase;
+    text-justify:newspaper;
+
+}
+
+.banner-text h5{
+    color: var(--light-color);
+    font-size:medium;
+    font-weight:800 ;
+    text-align:justify;
+    text-transform: uppercase;
+    text-justify:inter-word;
+
+}
+.banner-text p{
+    
+    text-align:justify;
+   
+    text-justify:inter-word;
+
+}
+.banner-text span{
+  color:#FEDA15 ;
+}
+.button {
+    background-color:#FEDA15;
+    border: none;
+    color: black;
+    padding: 15px;
+    text-align:justify;
+    text-justify: inter-word;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+  }
+  .button4 {border-radius: 12px;}
+/*-----------------------media queries--------------------------*/
+@media(min-width: 450px){
+    .navbar-collapse{
+        width: 320px;
+    }
+}
+@media(min-width: 768px){
+    .banner{
+        padding: 0;
+    }
+    .banner .container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items:center;
+    }
+    .banner-text{
+        text-align: center;
+        margin-left: 0%;
+        max-width: 100%;
+    }
+    .banner-image{
+        justify-content: start;
+    }
+    .feature-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+    .pricing-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+    }
+    .pricing-item{
+        width: 100%;
+    }
+}
+@media(min-width: 992px){
+    .navbar-toggler{
+        display: none;
+    }
+    .navbar-collapse{
+        position: relative;
+        width: 100%;
+        transform: translateX(0);
+        background-color: transparent;
+        border-left: none;
+        transition: none;
+    }
+    .navbar-nav{
+        display: flex;
+        padding: 0;
+        justify-content: flex-end;
+
+    }
+    .nav-item{
+        margin: 0 0 0 2.4rem;
+    }
+    .nav-link{
+        color: var(--light-color);
+        opacity: 0.8;
+    }
+    .nav-link::before{
+        content: "";
+    }
+    .nav-link:hover{
+        
+        color: var(--yellow-orange-color);
+    }
+    .banner-text h1{
+        font-size: 3.2rem;
+    }
+    .banner-text .text{
+        font-size: 1.5rem;
+    }
+    .feature-grid{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2rem;
+    }
+    .pricing-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+    }
+    .pricing-item{
+        width: 100%;
+    }
+}
+@media(min-width: 1200px){
+    .banner .container{
+        min-height: calc(100vh - 70px);
+        padding-bottom: 5rem;
+    }
+    .banner-text h1{
+        font-size: 3rem;
+    }
+    .feature-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+    .pricing-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+    }
+    .pricing-item{
+        width: 100%;
+    }
+    .contact-wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+ /*--------media queries---*/
+ @media (max-width: 768px) {
+    .services {
+      grid-template-columns: 1fr;
+    }  
+    
+  }
+
+/* ----------------------SERVICES PAGE -----------------------------*/
+.services {
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: center;
+  }
+  .title h1{
+    font-size: 3rem;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .title h2{
+    font-size: 1.3rem;
+    text-align: center;
+    display: block;
+    text-transform:capitalize;
+    color: var(--yellow-orange-color);
+    
+  }
+  .title span{
+    font-size: 4rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    display: block;
+    margin-top: 1rem;
+
+    
+    color: var(--light-color);
+  }
+  
+  .services .service {
+    padding: 30px;
+    color: var(--light-color);
+  }
+  .services .service p{
+    text-align:justify;
+    text-justify:inter-word;
+  }
+  
+  .services .service:hover {
+    box-shadow: 0 10px 30px var(--yellow-orange-color);
+  }
+  
+  .services .service .h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 20px;
+    color: var(--light-color);
+  }
+  
+  .services .service .icon img {
+    max-width: 100px;
+  }
+  
+  /*--------media queries---*/
+  @media (max-width: 768px) {
+    .services {
+      grid-template-columns: 1fr;
+    }  
+    
+  }
+   /*--------Why Choose us/ Features---*/
+ .feature-item{
+     margin: 2rem 0;
+     padding: 6rem 1rem;
+     text-align: center;
+     color: var(--yellow-orange-color);
+     background-color: var(--dark-color);  
+ } 
+ .feature-item .icon{
+    font-size: 2.9rem; 
+} 
+.feature-item p{
+    text-align:justify;
+    text-justify:inter-word;
+}
+ 
+  .section-heading h2{
+    font-size: 2.8rem;
+    text-align: center;
+    display: block;
+    text-transform:capitalize;
+    color: var(--yellow-orange-color);
+    
+  }
+  
+
+
+  /*------------Pricing-----------*/
+  #ourpricing{
+      background-color: var(--yellow-orange-color);
+  }
+  .section-heading-price h1{
+    font-size: 3rem;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .section-heading-price h2{
+    font-size: 2.8rem;
+    text-align: center;
+    display: block;
+    text-transform:capitalize;
+    color: var(--light-color);
+    
+  }
+  .pricing-item .price{
+      margin: 2rem 0;
+
+  }
+  .pricing-item{
+      text-align: center;
+      background-color:var(--black-color);
+      margin: 2rem auto;
+      padding: 3rem;
+      max-width: 450px;
+
+  }
+  .pricing-item p{
+      font-size: 2rem;
+      font-weight: 600;
+  }
+  .pricing-item p span{
+    color: var(--yellow-orange-color);
+    font-size: 3.2rem;
+}
+.pricing-item li{
+    text-align:justify;
+    text-justify:inter-word;
+}
+.pricing-item li, a, h2{
+    color: var(--light-color);
+}
+.pricing-item a{
+    color: var(--yellow-orange-color);
+}
+.pricing-item .btn{
+    background-color: var(--yellow-orange-color);
+    color: var(--black-color);
+    padding: 1.3rem 2rem;
+    display: inline-block;
+    font-weight: 600;
+    transition: var(--transition);
+}
+.pricing-item .btn:hover{
+    background-color: var(--yellow-orange-color);
+    color: var(--light-color);
+}
+.pricing-item ul{
+    margin: 1.8rem 0 0 0;
+}
+.pricing-item ul li{
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--yellow-orange-color);
+    
+}
+
+/*-------------------------Contact------------------------*/
+#contact-us{
+    background-color: var(--yellow-orange-color-color);
+    position: relative;
+    
+}
+.contact-wrapper{
+    background-color: var(--yellow-orange-color);
+    padding: 4rem 3rem;
+    z-index: 10;
+    position: relative;
+}
+.bg-block h1{
+    font-size: 3rem;
+    text-align: center;
+    background-color: #FEDA15;
+    color: var(--light-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .bg-block .explain h1{
+    font-size: 1rem;
+    text-align: center;
+    background-color: #FEDA15;
+    color: var(--light-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+.contact-info{
+    margin-bottom: 6rem;
+}
+.info-group{
+    margin: 1rem 0;
+    font-size: 1.7rem;
+}
+.info-group .icon{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+    background-color: var(--black-color);
+}
+.info-group .icon i{
+    color: var(--yellow-orange-color);
+    font-size: 2rem;
+}
+.input-group{
+    margin: 1rem 0;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+.input-group .form-control{
+    width: 100%;
+    height: 40px;
+    max-width: 909;
+    margin:  0;
+    padding: 0 1rem;
+    border: 1px solid var(--yellow-orange-color-color);
+    transition:var(--transition);
+}
+.input-group .form-control:focus{
+    border-color: #f5961d;
+}
+
+.input-group .form-control ::placeholder{
+    font-weight: 400;
+    opacity: 0.7;
+}
+.input-group button{
+    margin: 1rem 0;
+    height: 48px;
+    background-color: var(--black-color);
+    color: var(--yellow-orange-color);
+    min-width: 120px;
+    text-transform: uppercase;
+    transition: var(--transition);
+}
+.input-group button :hover{
+    opacity: 0.8;
+}
+.social-links{
+    margin-top: 4rem;
+    justify-content:flex-start;
+}
+.social-links a{
+    margin-right: 2rem;
+    color: var(--black-color);
+    transition: var(--transition)
+}
+.social-links a i{
+    font-size: 2.5rem;
+}
+.social-links a:hover{
+    color: var(--old-lace-color);
+}
+.contact-form textarea.form-control{
+    height: auto;
+    resize: none;
+    padding: 1rem;
+}
+/*------------Footer--------------*/
+.footer{
+    background-color: var(--black-color);
+    text-align: center;
+    font-size: 1.4rem;
+
+}
+.footer i{
+    color: #ff6347;
+}
+.footer .text{
+    max-width: 600px;
+    margin: 0 auto;
+}
+.footer .copyright-text{
+    font-size: 1.4rem;
+}
+
+/*----------------------Dancing Button------------------------------*/
+.banner-text button a{
+color: #000;
+}
+.banner-text button {
+    position:static;
+    left:calc(50% - 4em);
+    top:calc(50% - 2em);
+    height:4em;
+    width:8em;
+    
+    background:
+      -webkit-linear-gradient(top, #FEDA15, #f5961d);
+    /*direction, colorstop1, colorstop2*/
+    background:linear-gradient(top,#555,#333);
+    color:palegreen;
+    transform-origin:50% 4em;
+    -webkit-animation:wiggle 1.5s linear infinite;
+    animation:w
+    iggle 1.5s linear infinite;
+  }
+  
+  @-webkit-keyframes wiggle {
+    0% {
+      -webkit-transform:rotateZ(0);
+      transform:rotateZ(0);
+    }
+    10% {
+      -webkit-transform:rotateZ(-15deg);
+      transform:rotateZ(-15deg);
+    }
+    20% {
+      -webkit-transition:rotateZ(10deg);
+      transition:rotateZ(10deg);
+    }
+    25% {
+      -webkit-transition:rotateZ(-10deg);
+      transition:rotateZ(-10deg);
+    }
+    30% {
+      -webkit-transition:rotateZ(6deg);
+      transition:rotateZ(6deg);
+    }
+    35% {
+      -webkit-transform:rotateZ(-4deg);
+      transform:rotateZ(-4deg);
+    }
+    40% {
+      transform:rotateZ(7deg);
+    }
+    50% {
+      transform:rotateZ(-6deg);
+    }
+    60% {
+      transform:rotateZ(10deg);
+    }
+    70% {
+      transform:rotateZ(-14deg);
+    }
+    80% {
+      transform:rotateZ(3deg);
+    }
+    90% {
+      transform:rotateZ(-7deg);
+    }
+    100% {
+      -webkit-transition:rotateZ(0);
+      transition:rotateZ(0);
+    }
+  }
+
+  /*------------Starts*/
+  
+html {
+   
+    
+    background-color: black;
+    display: -webkit-box;
+    display: flex;
+  }
+    
+  /* Here using -webkit, we make angle 
+  of 45 degree of falling star */
+  .sky {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+  }
+    
+  /* Here we are making roundabout balls  */
+  .star {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 2px;
+    border-radius: 885px;
+    background: linear-gradient(-45deg, 
+      #FEDA15, hsla(69, 100%, 50%, 0));
+    
+    -webkit-filter: drop-shadow(0 0 6px #FEDA15);
+    filter: drop-shadow(0 0 6px #FEDA15);
+    -webkit-animation: tail 3000ms ease-in-out infinite,
+      shooting 3000ms ease-in-out infinite;
+    animation: tail 3000ms ease-in-out infinite,
+      shooting 3000ms ease-in-out infinite;
+  }
+    
+  /* Here we add before and after effect to star */
+  .star::before,
+  .star::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      -45deg,
+      rgba(0, 0, 255, 0),
+      #FEDA15,
+      rgba(0, 0, 255, 0)
+    );
+    -webkit-transform: translateX(50%) rotateZ(45deg);
+    transform: translateX(50%) rotateZ(45deg);
+    border-radius: 100%;
+    -webkit-animation: shining 3000ms ease-in-out infinite;
+    animation: shining 3000ms ease-in-out infinite;
+  }
+  .star::after {
+    -webkit-transform: translateX(50%) rotateZ(-45deg);
+    transform: translateX(50%) rotateZ(-45deg);
+  }
+    
+  /* Here we are adding location of each 
+     nth-child, animations, delays, and 
+     before and after effects to each 
+     and every balls(stars) */
+  .star:nth-child(1) {
+    top: calc(50% - -119px);
+    left: calc(50% - 43px);
+    -webkit-animation-delay: 4000ms;
+    animation-delay: 4000ms;
+  }
+  .star:nth-child(1)::before,
+  .star:nth-child(1)::after {
+    -webkit-animation-delay: 4000ms;
+    animation-delay: 4000ms;
+  }
+  .star:nth-child(2) {
+    top: calc(50% - -43px);
+    left: calc(50% - 37px);
+    -webkit-animation-delay: 5000ms;
+    animation-delay: 5000ms;
+  }
+  .star:nth-child(2)::before,
+  .star:nth-child(2)::after {
+    -webkit-animation-delay: 5000ms;
+    animation-delay: 5000ms;
+  }
+  .star:nth-child(3) {
+    top: calc(50% - -40px);
+    left: calc(50% - 222px);
+    -webkit-animation-delay: 7000ms;
+    animation-delay: 7000ms;
+  }
+  .star:nth-child(3)::before,
+  .star:nth-child(3)::after {
+    -webkit-animation-delay: 7000ms;
+    animation-delay: 7000ms;
+  }
+  .star:nth-child(4) {
+    top: calc(50% - -29px);
+    left: calc(50% - 113px);
+    -webkit-animation-delay: 7000ms;
+    animation-delay: 7000ms;
+  }
+  .star:nth-child(4)::before,
+  .star:nth-child(4)::after {
+    -webkit-animation-delay: 7000ms;
+    animation-delay: 7000ms;
+  }
+  .star:nth-child(5) {
+    top: calc(50% - 146px);
+    left: calc(50% - 112px);
+    -webkit-animation-delay: 3000ms;
+    animation-delay: 3000ms;
+  }
+  .star:nth-child(5)::before,
+  .star:nth-child(5)::after {
+    -webkit-animation-delay: 3000ms;
+    animation-delay: 3000ms;
+  }
+  .star:nth-child(6) {
+    top: calc(50% - -108px);
+    left: calc(50% - 160px);
+    -webkit-animation-delay: 3000ms;
+    animation-delay: 3000ms;
+  }
+  .star:nth-child(6)::before,
+  .star:nth-child(6)::after {
+    -webkit-animation-delay: 3000ms;
+    animation-delay: 3000ms;
+  }
+  .star:nth-child(7) {
+    top: calc(50% - 52px);
+    left: calc(50% - 72px);
+    -webkit-animation-delay: 7000ms;
+    animation-delay: 7000ms;
+  }
+  .star:nth-child(7)::before,
+  .star:nth-child(7)::after {
+    -webkit-animation-delay: 7000ms;
+    animation-delay: 7000ms;
+  }
+    
+  /* This code will help to generate 
+  effect in tail of star */
+  @keyframes tail {
+    0% {
+      width: 0;
+    }
+    30% {
+      width: 100px;
+    }
+    100% {
+      width: 0;
+    }
+  }
+    
+  /* This code will generate shining 
+  effect in head of star */
+  @keyframes shining {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 30px;
+    }
+    100% {
+      width: 0;
+    }
+  }
+    
+  /* Here we are adding webkit-animation 
+  to head of star for shining */
+  @-webkit-keyframes shining {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 30px;
+    }
+    100% {
+      width: 0;
+    }
+  }
+    
+  /* Here we are adding webkit-animation 
+  to tail of star */
+  @-webkit-keyframes tail {
+    0% {
+      width: 0;
+    }
+    30% {
+      width: 100px;
+    }
+    100% {
+      width: 0;
+    }
+  }
+    
+  /* Here we are adding webkit-animation 
+  for shooting effect */
+  @-webkit-keyframes shooting {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(270px);
+      transform: translateX(270px);
+    }
+  }
+    
+  /* Here we make shooting effect */
+  @keyframes shooting {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(270px);
+      transform: translateX(270px);
+    }
+  }
