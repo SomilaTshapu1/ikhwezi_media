@@ -4,7 +4,7 @@ const navbarCollapseDiv = document.querySelector('.navbar-collapse');
 navbarTogglerBtn.addEventListener('click', () =>{
     navbarCollapseDiv.classList.toggle('show-navbar-collapse');
     if(navbarCollapseDiv.classList.contains('show-navbar-collapse')){
-        navbarTogglerBtn.querySelector('img').src = "images/close.png"
+       navbarTogglerBtn.querySelector('img').src = "images/close.png"
     }
     else(navbarTogglerBtn.querySelector('img').src = "images/menu.png")
 })
